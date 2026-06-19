@@ -82,11 +82,11 @@ const photos = [
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_Kitten.jpg',
   },
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
-    fallbackSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
-    alt: '灰色缅因猫备用展示照片',
-    caption: '备用展示照，确保页面不会因为远程图片失效而出现破图。',
-    source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_kitten.jpg',
+    src: '/assets/maine-coon-adult-grass.jpg',
+    fallbackSrc: '/assets/maine-coon-adult-grass.jpg',
+    alt: '草地里正脸看镜头的成年缅因猫',
+    caption: '成年缅因猫正脸照，耳尖毛和蓬松围脖很明显。',
+    source: 'https://unsplash.com/photos/a-long-haired-cat-sitting-in-the-grass-SX_lq2EvzPo',
   },
 ]
 
