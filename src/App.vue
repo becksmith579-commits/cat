@@ -72,6 +72,7 @@ const photos = [
     fallbackSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
     alt: '灰色缅因猫幼猫趴在床上',
     caption: '灰色幼猫，能看到蓬松耳毛和大爪子。',
+    sourceName: 'Wikimedia Commons',
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_kitten.jpg',
   },
   {
@@ -79,6 +80,7 @@ const photos = [
     fallbackSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
     alt: '棕虎斑缅因猫幼猫趴在地毯上',
     caption: '棕虎斑幼猫，脸型和前爪很有代表性。',
+    sourceName: 'Wikimedia Commons',
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_Kitten.jpg',
   },
   {
@@ -86,6 +88,7 @@ const photos = [
     fallbackSrc: '/assets/maine-coon-adult-grass.jpg',
     alt: '草地里正脸看镜头的成年缅因猫',
     caption: '成年缅因猫正脸照，耳尖毛和蓬松围脖很明显。',
+    sourceName: 'Unsplash',
     source: 'https://unsplash.com/photos/a-long-haired-cat-sitting-in-the-grass-SX_lq2EvzPo',
   },
 ]
@@ -184,7 +187,7 @@ function useFallbackPhoto(event, fallbackSrc) {
           <img :src="photo.src" :alt="photo.alt" @error="useFallbackPhoto($event, photo.fallbackSrc)">
           <figcaption>
             {{ photo.caption }}来源：
-            <a :href="photo.source" target="_blank" rel="noreferrer">Wikimedia Commons</a>
+            <a :href="photo.source" target="_blank" rel="noreferrer">{{ photo.sourceName }}</a>
           </figcaption>
         </figure>
       </div>
