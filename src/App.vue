@@ -6,6 +6,10 @@ const navItems = [
   { href: '#daily', label: '日常' },
 ]
 
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`
+const kittenIllustration = assetPath('assets/maine-coon-kitten.svg')
+const adultMaineCoonPhoto = assetPath('assets/maine-coon-adult-grass.jpg')
+
 const traits = [
   {
     title: '亲人但不黏腻',
@@ -84,8 +88,8 @@ const photos = [
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_Kitten.jpg',
   },
   {
-    src: '/assets/maine-coon-adult-grass.jpg',
-    fallbackSrc: '/assets/maine-coon-adult-grass.jpg',
+    src: adultMaineCoonPhoto,
+    fallbackSrc: adultMaineCoonPhoto,
     alt: '草地里正脸看镜头的成年缅因猫',
     caption: '成年缅因猫正脸照，耳尖毛和蓬松围脖很明显。',
     sourceName: 'Unsplash',
@@ -115,7 +119,7 @@ function useFallbackPhoto(event, fallbackSrc) {
     </div>
   </nav>
 
-  <header class="hero">
+  <header class="hero" :style="{ '--hero-image': `url(${kittenIllustration})` }">
     <div class="hero-copy">
       <p class="eyebrow">Maine Coon Kitten</p>
       <h1>小缅因猫</h1>
@@ -192,7 +196,7 @@ function useFallbackPhoto(event, fallbackSrc) {
         </figure>
       </div>
       <div class="gallery">
-        <img src="/assets/maine-coon-kitten.svg" alt="坐在窗边的小缅因猫插画">
+        <img :src="kittenIllustration" alt="坐在窗边的小缅因猫插画">
         <div>
           <h2>适合它的家，会有一点点宽敞，也有很多耐心。</h2>
           <ul class="mini-list">
@@ -295,7 +299,7 @@ a { color: inherit; }
   padding: 112px clamp(20px, 5vw, 72px) 52px;
   background:
     linear-gradient(90deg, rgba(255, 250, 241, .96) 0%, rgba(255, 250, 241, .74) 43%, rgba(255, 250, 241, .08) 72%),
-    url("/assets/maine-coon-kitten.svg") center / cover no-repeat;
+    var(--hero-image) center / cover no-repeat;
 }
 
 .hero-copy {
@@ -595,7 +599,7 @@ footer div {
     min-height: 82vh;
     background:
       linear-gradient(180deg, rgba(255, 250, 241, .98) 0%, rgba(255, 250, 241, .82) 45%, rgba(255, 250, 241, .24) 100%),
-      url("/assets/maine-coon-kitten.svg") center bottom / cover no-repeat;
+      var(--hero-image) center bottom / cover no-repeat;
   }
 
   .section-head,
