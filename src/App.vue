@@ -82,11 +82,11 @@ const photos = [
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_Kitten.jpg',
   },
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Chatmaincoon.jpg',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
     fallbackSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
-    alt: '成年缅因猫照片',
-    caption: '成年缅因猫，能看到更蓬松的毛量和成熟体态。',
-    source: 'https://commons.wikimedia.org/wiki/File:Chatmaincoon.jpg',
+    alt: '灰色缅因猫备用展示照片',
+    caption: '备用展示照，确保页面不会因为远程图片失效而出现破图。',
+    source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_kitten.jpg',
   },
 ]
 
