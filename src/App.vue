@@ -69,21 +69,24 @@ const careItems = [
 const photos = [
   {
     src: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
+    fallbackSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
     alt: '灰色缅因猫幼猫趴在床上',
     caption: '灰色幼猫，能看到蓬松耳毛和大爪子。',
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_kitten.jpg',
   },
   {
     src: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Maine_Coon_Kitten.jpg',
+    fallbackSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
     alt: '棕虎斑缅因猫幼猫趴在地毯上',
     caption: '棕虎斑幼猫，脸型和前爪很有代表性。',
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_Kitten.jpg',
   },
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/M%C3%A2le_Black_Silver_Blotched_Tabby.jpeg/800px-M%C3%A2le_Black_Silver_Blotched_Tabby.jpeg',
-    alt: '黑银虎斑成年缅因猫坐姿照片',
-    caption: '黑银虎斑成年缅因猫，能看到蓬松围脖和耳尖毛。',
-    source: 'https://commons.wikimedia.org/wiki/File:M%C3%A2le_Black_Silver_Blotched_Tabby.jpeg',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Chatmaincoon.jpg',
+    fallbackSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Maine_Coon_kitten.jpg',
+    alt: '成年缅因猫照片',
+    caption: '成年缅因猫，能看到更蓬松的毛量和成熟体态。',
+    source: 'https://commons.wikimedia.org/wiki/File:Chatmaincoon.jpg',
   },
 ]
 
@@ -93,6 +96,12 @@ const dailyTips = [
   '如果家里已有宠物，先隔离适应气味，再逐步见面。',
   '不要只被“巨型猫”吸引，它真正可爱的地方是稳定、亲切和慢热的陪伴感。',
 ]
+
+function useFallbackPhoto(event, fallbackSrc) {
+  if (!fallbackSrc || event.target.dataset.fallbackApplied) return
+  event.target.dataset.fallbackApplied = 'true'
+  event.target.src = fallbackSrc
+}
 </script>
 
 <template>
@@ -172,7 +181,7 @@ const dailyTips = [
       </div>
       <div class="photo-gallery">
         <figure v-for="photo in photos" :key="photo.src" class="photo-card">
-          <img :src="photo.src" :alt="photo.alt">
+          <img :src="photo.src" :alt="photo.alt" @error="useFallbackPhoto($event, photo.fallbackSrc)">
           <figcaption>
             {{ photo.caption }}来源：
             <a :href="photo.source" target="_blank" rel="noreferrer">Wikimedia Commons</a>
