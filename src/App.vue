@@ -79,12 +79,6 @@ const photos = [
     caption: '棕虎斑幼猫，脸型和前爪很有代表性。',
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_Kitten.jpg',
   },
-  {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Tortie_maine_coon_in_grass_II.jpg/1280px-Tortie_maine_coon_in_grass_II.jpg',
-    alt: '草地里的玳瑁色成年缅因猫',
-    caption: '成年缅因猫，毛量和眼神会更沉稳。',
-    source: 'https://commons.wikimedia.org/wiki/File:Tortie_maine_coon_in_grass_II.jpg',
-  },
 ]
 
 const dailyTips = [
