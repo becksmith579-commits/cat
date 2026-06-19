@@ -80,10 +80,10 @@ const photos = [
     source: 'https://commons.wikimedia.org/wiki/File:Maine_Coon_Kitten.jpg',
   },
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Tortie_maine_coon_in_grass_II.jpg/1280px-Tortie_maine_coon_in_grass_II.jpg',
-    alt: '草地里的玳瑁色成年缅因猫',
-    caption: '成年缅因猫，毛量和眼神会更沉稳。',
-    source: 'https://commons.wikimedia.org/wiki/File:Tortie_maine_coon_in_grass_II.jpg',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/M%C3%A2le_Black_Silver_Blotched_Tabby.jpeg/800px-M%C3%A2le_Black_Silver_Blotched_Tabby.jpeg',
+    alt: '黑银虎斑成年缅因猫坐姿照片',
+    caption: '黑银虎斑成年缅因猫，能看到蓬松围脖和耳尖毛。',
+    source: 'https://commons.wikimedia.org/wiki/File:M%C3%A2le_Black_Silver_Blotched_Tabby.jpeg',
   },
 ]
 
@@ -520,8 +520,8 @@ h2 {
 .photo-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: var(--cream);
+  object-fit: contain;
+  background: #edf4f7;
 }
 
 .photo-card figcaption {
